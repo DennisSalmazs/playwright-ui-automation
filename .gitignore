@@ -1,7 +1,11 @@
-
-# Playwright
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
+test-results/
+allure-results/
+allure-report/
+Downloads/
+html-report.zip/
+html-report/
+test-logs.log
+logs
+Dockerfile
+.dockerignore
