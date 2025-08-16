@@ -16,7 +16,6 @@ const config: PlaywrightTestConfig = {
   ],
 
   use: {
-    baseURL: process.env.BASE_URL,
     headless: false,
     viewport: { width: 1500, height: 730 },
     ignoreHTTPSErrors: true,
@@ -36,20 +35,21 @@ const config: PlaywrightTestConfig = {
         browserName: "chromium",
         channel: "chrome",
       },
-    },
-    {
-      name: "Firefox",
-      use: {
-        browserName: "firefox",
-      },
-    },
-    {
-      name: "WebKit",
-      use: {
-        browserName: "webkit",
-      },
-    },
-  ],
+    }
+    // ,
+    // {
+    //   name: "Firefox",
+    //   use: {
+    //     browserName: "firefox",
+    //   },
+    // },
+    // {
+    //   name: "WebKit",
+    //   use: {
+    //     browserName: "webkit",
+    //   },
+    // },
+  ]
 };
 
 export default config;

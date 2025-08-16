@@ -1,4 +1,3 @@
-
 import path from 'path';
 import fs from 'fs';
 import { createLogger, format, transports, Logger } from 'winston';
@@ -19,7 +18,6 @@ const baseLogger = createLogger({
     new transports.File({ filename: path.join(logDir, 'test-execution.log') })
   ]
 });
-
 
 interface CustomLogger extends Logger {
   pass: (msg: string) => void;
