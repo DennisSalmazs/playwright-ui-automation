@@ -17,12 +17,12 @@ npm-debug.log
 test-results
 playwright-report
 cucumber-report
-allure-results-tag
+/allure-results-tag/
 **/.features-gen/**/*.spec.js
 
 .nx
 
 build-archive.log
 /browserstack.yml
-/logs
+/logs/
 /allure-results
