@@ -8,21 +8,18 @@ npm-debug.log
 
 # yarn
 .pnp.*
-.yarn
-
-# env
-.env
 
 # tests
 test-results
 playwright-report
 cucumber-report
+/allure-results/
 /allure-results-tag/
+/logs/
+/storage/
 **/.features-gen/**/*.spec.js
 
 .nx
 
 build-archive.log
 /browserstack.yml
-/logs/
-/allure-results
