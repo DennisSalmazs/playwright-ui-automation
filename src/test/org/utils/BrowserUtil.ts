@@ -60,6 +60,15 @@ export class BrowserUtils {
     }
 
     /**
+     * Returns trimmed text content from element matching the specified locator.
+     */
+    async getElementText(locator: Locator): Promise<string> {
+        const text = await locator.textContent();
+        if (text == null) throw new Error('Element has no textContent');
+        return text.trim();
+    }
+
+    /**
      * Returns an array of trimmed text content from all elements matching the specified locator.
      */
     async getElementsText(locator: Locator): Promise<string[]> {
@@ -80,10 +89,8 @@ export class BrowserUtils {
     /**
      * Waits until the page's document is fully loaded (`document.readyState === 'complete'`).
      */
-    async waitForPageToLoad(timeout: number = 10000): Promise<void> {
-        await this.page.waitForFunction( () => {
-            document.readyState === 'complete', null, { timeout }
-        });
+    async waitForPageToLoad(): Promise<void> {
+        await this.page.waitForLoadState("domcontentloaded")
     }
 
     /**

@@ -7,7 +7,7 @@ type ScenarioFixtures = {
 
 type ScenarioState = {
     user?: string,
-    statusCode?: number
+    products?: Array<string>
 }
 
 export const test = testWithApp.extend<ScenarioFixtures>({

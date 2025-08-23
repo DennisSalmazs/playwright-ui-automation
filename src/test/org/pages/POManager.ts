@@ -1,23 +1,22 @@
 import { type Page } from '@playwright/test';
-import { BasePage } from './BasePage';
 import { LoginPage } from './LoginPage';
 import { InventoryPage } from './InventoryPage';
+import {CartPage} from "./CartPage";
+import {CheckoutPage} from "./CheckoutPage";
 
 export class POManager {
-    page: Page;
-    basePage: BasePage;
-    loginPage: LoginPage;
-    inventoryPage: InventoryPage;
+    readonly page: Page;
+    readonly loginPage: LoginPage;
+    readonly inventoryPage: InventoryPage;
+    readonly cartPage: CartPage;
+    readonly checkoutPage: CheckoutPage;
 
     constructor(page: Page) {
         this.page = page;
-        this.basePage = new BasePage(page);
         this.loginPage = new LoginPage(page);
         this.inventoryPage = new InventoryPage(page);
-    }
-
-    getBasePage() {
-        return this.basePage;
+        this.cartPage = new CartPage(page);
+        this.checkoutPage = new CheckoutPage(page);
     }
 
     getLoginPage() {
@@ -26,5 +25,13 @@ export class POManager {
 
     getInventoryPage() {
         return this.inventoryPage;
+    }
+
+    getCartPage() {
+        return this.cartPage;
+    }
+
+    getCheckoutPage() {
+        return this.checkoutPage;
     }
 }

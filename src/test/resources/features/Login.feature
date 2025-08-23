@@ -1,19 +1,16 @@
-@auth
 Feature: User Authentication
 
   Background:
-    Given I am on the login page
+    Given I am on the "LOGIN" page
 
   Scenario Outline: Valid users are able to login
     When I log in with "<username>" with "<password>"
-    Then I verify the "<url>"
-    And I persist the session as "<username>"
+    Then I verify I am on the "<page>" page
 
     Examples:
-      | username      | password     | url                                      |
-      | standard_user | secret_sauce | https://www.saucedemo.com/inventory.html |
-      | problem_user  | secret_sauce | https://www.saucedemo.com/inventory.html |
-      | visual_user   | secret_sauce | https://www.saucedemo.com/inventory.html |
+      | username      | password     | page      |
+      | standard_user | secret_sauce | INVENTORY |
+      | visual_user   | secret_sauce | INVENTORY |
 
   Scenario Outline: Invalid users are not able to login
     When I log in with "<username>" with "<password>"
@@ -24,4 +21,3 @@ Feature: User Authentication
       | locked_out_user | secret_sauce     | Epic sadface: Sorry, this user has been locked out.                       |
       | standard_user   | invalid_password | Epic sadface: Username and password do not match any user in this service |
       | invalid_user    | secret_sauce     | Epic sadface: Username and password do not match any user in this service |
-

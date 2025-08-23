@@ -2,14 +2,10 @@
   "name": "playwright-bdd-example",
   "version": "0.1.0",
   "scripts": {
-    "test": "run-s test:setup test:rest",
-    "posttest": "node -e \"require('fs').rmSync('test-results',{recursive:true,force:true})\"",
-    "test:setup": "npx bddgen --tags \"@auth\" && npx playwright test --workers=1",
-    "test:rest":  "npx bddgen --tags \"not @auth\" && npx playwright test --headed",
-    "test:tag": "node run-tag.js",
-    "report": "allure serve allure-results",
-    "report:tag": "allure serve allure-results-tag",
-    "watch:bdd": "nodemon -w src/test/resources/features -e feature,js,ts --exec \"npx bddgen\"",
+    "test": "npx bddgen && npx playwright test --project=Chrome",
+    "test:tag": "sh -c 'npx bddgen --tags \"$tags\" && npx playwright test' --project=Chrome",
+    "report": "npx http-server ./cucumber-report -c-1 -a localhost -o index.html",
+    "watch:bdd": "nodemon -w ./features -e feature,js,ts --exec \"npx bddgen\"",
     "watch:pw": "playwright test --ui",
     "watch": "run-p watch:*"
   },
