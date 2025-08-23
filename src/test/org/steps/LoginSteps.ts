@@ -10,7 +10,7 @@ Given('I am on the {string} page', async ({ page, browserUtils }, url: string) =
   await browserUtils.waitForPageToLoad();
 });
 
-When('I log in with {string} with {string}', async ({ poManager, scenario }, username: string, password: string) => {
+When('I log in with username {string} and password {string}', async ({ poManager, scenario }, username: string, password: string) => {
   scenario.user = username;
   await poManager.getLoginPage().login(username,password);
   logger.info(`${scenario.user} logs in`)

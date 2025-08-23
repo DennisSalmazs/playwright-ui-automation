@@ -4,7 +4,7 @@ Feature: As a user
 
   Background:
     Given I am on the "LOGIN" page
-    And I log in with "standard_user" with "secret_sauce"
+    And I log in with username "standard_user" and password "secret_sauce"
 
   Scenario: User completes checkout for multiple products
     When I add products to cart:

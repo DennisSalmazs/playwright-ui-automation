@@ -6,7 +6,7 @@ Feature: As a user
     Given I am on the "LOGIN" page
 
   Scenario Outline: Valid users are able to login
-    When I log in with "<username>" with "<password>"
+    When I log in with username "<username>" and password "<password>"
     Then I verify I am on the "<page>" page
 
     Examples:
@@ -15,7 +15,7 @@ Feature: As a user
       | visual_user   | secret_sauce | INVENTORY |
 
   Scenario Outline: Invalid users are not able to login
-    When I log in with "<username>" with "<password>"
+    When I log in with username "<username>" and password "<password>"
     Then I verify the logging error message "<errorMsg>"
 
     Examples:
