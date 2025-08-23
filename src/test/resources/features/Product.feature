@@ -1,11 +1,12 @@
-@pr
-Feature: E2E
+@product
+Feature: As a user
+  I purchase products via cart and checkout
 
   Background:
     Given I am on the "LOGIN" page
     And I log in with "standard_user" with "secret_sauce"
 
-  Scenario: e2e
+  Scenario: User completes checkout for multiple products
     When I add products to cart:
       | Sauce Labs Backpack     |
       | Sauce Labs Bolt T-Shirt |

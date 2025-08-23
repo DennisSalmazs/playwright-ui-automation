@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { defineBddConfig } from 'playwright-bdd';
+import {cucumberReporter, defineBddConfig} from 'playwright-bdd';
 
 const testDir = defineBddConfig({
     features: 'src/test/resources/features/*.feature',
@@ -12,6 +12,10 @@ const testDir = defineBddConfig({
 export default defineConfig({
     testDir,
     reporter: [
+        cucumberReporter('html', {
+            outputFile: 'cucumber-report/index.html',
+            externalAttachments: true,
+        }),
         ['allure-playwright'],
         ['html', { outputFolder: 'html-report', open: 'always' }],
     ],

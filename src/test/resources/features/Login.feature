@@ -1,4 +1,6 @@
-Feature: User Authentication
+@login
+Feature: As a user
+  I login to the app
 
   Background:
     Given I am on the "LOGIN" page

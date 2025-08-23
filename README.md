@@ -21,8 +21,6 @@ This repository contains end-to-end tests for UI project using **Playwright-BDD*
 playwright-ui-automation/
 ├── .features-gen/                 # generated Playwright tests from bddgen (gitignored)
 ├── allure-results/                # Allure history (all runs)
-├── allure-results-tag/            # copy of the latest single-tag run (served by `report:tag`)
-├── logs/                          # custom logs (optional)
 ├── node_modules/                  # deps
 ├── src/
 │   └── test/
@@ -30,7 +28,6 @@ playwright-ui-automation/
 │       │   ├── constants/
 │       │   ├── fixtures/          # app & BDD fixtures (createBdd exports Given/When/Then)
 │       │   ├── pages/             # Page Objects
-│       │   │   ├── BasePage.ts
 │       │   │   ├── Pages.ts
 │       │   │   └── POManager.ts
 │       │   ├── steps/             # Step definitions
@@ -41,7 +38,6 @@ playwright-ui-automation/
 │       │       └── Logger.ts
 │       └── resources/
 │           └── features/          # Gherkin specs
-├── storage/                       # persisted sessions (e.g., standard_user.json)
 ├── .gitignore
 ├── package.json                   # scripts (login-first + tag runs), deps
 ├── playwright.config.ts           # Playwright-BDD config (Allure-only)
@@ -86,7 +82,7 @@ npn run test
 ### Particular tests with tag
 
 ```bash
-npm run test:tag -- @tag
+tags='@product' npm run test:tag 
 ```
 
 ### Specific browser
@@ -104,15 +100,6 @@ npx run test --project=firefox
 npm run report
 ```
 
-### Particular tests with tag
-
-```bash
-npm run report:tag
-```
-
-The framework keeps history in allure-results/.
-Single-tag runs mirror just the latest results to allure-results-tag/ so you can view that run alone.
-
 ---
 
 ## 🧪 Test Features
@@ -127,13 +114,15 @@ Single-tag runs mirror just the latest results to allure-results-tag/ so you can
 
 ## 📊 Reporting
 
-* **Allure** (`allure-playwright`)
+* **Allure Report** (`allure-playwright`)
+* **HTML Report** (`opens automatically after test run`)
 
 ---
 
 ## 👩‍💻 Author
 
 Deniz Salmaz
+
 Senior Cloud Software Development Engineer in Test  
 
 ---
