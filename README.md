@@ -1,8 +1,8 @@
 
-
 # 🎯 Playwright-BDD UI Automation with TypeScript
 
-This repository contains end-to-end tests for UI project using **Playwright-BDD** with **TypeScript**. It follows the **Page Object Model** pattern and supports multiple browsers.
+This repository contains end-to-end tests for UI project using **Playwright-BDD** with **TypeScript**. 
+It follows the **Page Object Model** pattern and supports multiple browsers.
 
 ---
 
@@ -119,10 +119,9 @@ npm run report
 
 ---
 
-## 👩‍💻 Author
+## 👨‍💻 Author
 
-Deniz Salmaz
-
-Senior Cloud Software Development Engineer in Test  
+* Deniz Salmaz
+* Senior Cloud Software Development Engineer in Test
 
 ---
