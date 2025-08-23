@@ -15,6 +15,7 @@ playwright-report
 cucumber-report
 /allure-results/
 /allure-results-tag/
+/html-report/
 /logs/
 /storage/
 **/.features-gen/**/*.spec.js
